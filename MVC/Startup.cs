@@ -16,6 +16,7 @@ namespace MVC
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,20 +26,28 @@ namespace MVC
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    await context.Response.WriteAsync(" Hello World!");
                 });
 
-                endpoints.MapGet("/Noura", async context =>
+                endpoints.MapGet("/Route", async context =>
                 {
-                    await context.Response.WriteAsync("Hello Noura!");
+                    await context.Response.WriteAsync("Hello Route!");
                 });
+
+
+                endpoints.MapControllerRoute(
+                    name: "Default",
+                    pattern: "{controller}/{Action}/{Name?}",
+                    defaults: new {action = "Index" }
+
+                 );
             });
         }
     }
