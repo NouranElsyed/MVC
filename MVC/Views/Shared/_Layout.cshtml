@@ -1,0 +1,63 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="~/Libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+
+<body class="bg-black vh-100">
+        @*Start header*@
+
+  @* HTML Tags *@
+
+        @*<center>
+            <header class="w-100 my-4">
+                <a class="btn btn-danger mx-3" href="/Home/Index">Home</a>
+                <a class="btn btn-warning mx-3" href="/Home/AboutUs">About us</a>
+                <a class="btn btn-success mx-3" href="/Home/ContactUS">Contact us</a>
+                <a class="btn btn-primary mx-3" href="/Home/Privacy">Privacy</a>
+            </header>
+        </center>*@
+
+  @* HTMl Helper *@
+
+            @* <center>
+                <header class="w-100 my-4">
+                    @html.actionlink("home", "index", "home", null, new { @class = "btn btn-danger mx-3" })
+                    @html.actionlink("about us", "aboutus", "home", null, new { @class = "btn btn-warning mx-3" })
+                    @html.actionlink("contact us", "contactus", "home", null, new { @class = "btn btn-success mx-3" })
+                    @html.actionlink("privacy", "privacy", "home", null, new { @class = "btn btn-primary mx-3" })
+                </header>
+            </center> *@
+
+  @* Tag Helper *@
+
+     <center>
+        <header class="w-100 my-4">
+            <a class="btn btn-danger mx-3" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="btn btn-warning mx-3" asp-controller="Home" asp-action="aboutus">About us</a>
+            <a class="btn btn-success mx-3" asp-controller="Home" asp-action="contactus">Contact us</a>
+            <a class="btn btn-primary mx-3" asp-controller="Home" asp-action="privacy">Privacy</a>
+        </header>
+    </center> 
+
+        @*End header*@
+
+        <div>
+            @RenderBody()
+        </div>
+
+        @*Start footer*@
+        <center>
+            <footer class="w-100 my-5 text-white">
+                <p>Copyrights © Route @DateTime.Now.Year</p>
+            </footer>
+        </center>
+        @*End footer*@
+
+
+</body>
+</html>
