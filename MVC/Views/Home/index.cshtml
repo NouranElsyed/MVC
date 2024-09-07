@@ -1,40 +1,14 @@
 ﻿
 @{
     ViewData["Title"] = "index";
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="~/Libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    </head>
-
-    <body class="bg-black d-flex justify-content-center">
-        @*Start header*@
-        <header>
-            <a class="btn btn-danger" href="/Home/Index">Home</a>
-            <a class="btn btn-warning" href="/Home/AboutUs">About us</a>
-            <a class="btn btn-success"  href="/Home/ContactUS">Contact us</a>
-            <a  class="btn btn-primary"  href="/Home/Privacy">Privacy</a>
-        </header>
-        @*End header*@
 
         @*Start Body*@
-        <Main>
+        <center>
+            <Main class="w-100 my-5 text-white">
             <h1>Welcome to Home Page</h1>
-        </Main>
+            </Main>
+        </center>
         @*End Body*@
-
-        @*Start footer*@
-        <footer>
-            <p>Copyrights &Copy; Route @DateTime.Now.Year</p>
-        </footer>
-        @*End footer*@
-
-
-    </body>
-</html>
-

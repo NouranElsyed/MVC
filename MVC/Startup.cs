@@ -31,20 +31,20 @@ namespace MVC
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync(" Hello World!");
-                });
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync(" Hello World!");
+                //});
 
-                endpoints.MapGet("/Route", async context =>
-                {
-                    await context.Response.WriteAsync("Hello Route!");
-                });
+                //endpoints.MapGet("/Route", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello Route!");
+                //});
 
 
                 endpoints.MapControllerRoute(
                     name: "Default",
-                    pattern: "{controller}/{Action}/{Name?}",
+                    pattern: "{controller=Home}/{Action=Index}/{Name?}",
                     defaults: new {action = "Index" }
 
                  );
